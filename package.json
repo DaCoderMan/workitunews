@@ -1,0 +1,27 @@
+{
+  "name": "personal-tech-business-news",
+  "version": "1.0.0",
+  "description": "Personal news aggregator for tech and business news with email updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "news",
+    "tech",
+    "business",
+    "email",
+    "aggregator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.7",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "rss-parser": "^3.13.0"
+  }
+}
