@@ -16,20 +16,28 @@ module.exports = {
   schedule: {
     interval: '0 */12 * * *' // Every 12 hours
   },
+  session: {
+    name: 'newsapp.sid',
+    secret: process.env.SESSION_SECRET || 'change-this-secret-in-production',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === 'production', // HTTPS only in production
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
+  },
   rssFeeds: {
-    tech: [
+    trending: [
       'https://techcrunch.com/feed/',
       'https://www.theverge.com/rss/index.xml',
       'https://arstechnica.com/feed/',
       'https://www.wired.com/feed/rss',
-      'https://feeds.feedburner.com/oreilly/radar'
-    ],
-    business: [
-      'https://www.bloomberg.com/feed/topics/technology',
-      'https://feeds.reuters.com/reuters/businessNews',
+      'https://feeds.reuters.com/reuters/technologyNews',
       'https://www.cnbc.com/id/100003114/device/rss/rss.html',
-      'https://feeds.feedburner.com/entrepreneur/latest',
-      'https://www.forbes.com/real-time/feed2/'
+      'https://feeds.feedburner.com/oreilly/radar',
+      'https://www.bloomberg.com/feed/topics/technology',
+      'https://feeds.feedburner.com/entrepreneur/latest'
     ]
   }
 };

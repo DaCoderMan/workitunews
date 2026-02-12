@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tech & Business News | Workitu Tech</title>
+    <meta name="description" content="Login to access trending tech and business news - Powered by Workitu Tech">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="login-title">Tech & Business News</h1>
+                <p class="login-subtitle">Please sign in to access your news digest</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        autocomplete="username"
+                        placeholder="Enter your username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        autocomplete="current-password"
+                        placeholder="Enter your password"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="register-section">
+                <p class="register-text">Don't have an account?</p>
+                <button type="button" class="btn btn-secondary btn-block" id="registerBtn">
+                    Register
+                </button>
+            </div>
+
+            <form id="registerForm" class="register-form" style="display: none;">
+                <div id="registerErrorMessage" class="error-message" style="display: none;"></div>
+
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input 
+                        type="text" 
+                        id="regUsername" 
+                        name="regUsername" 
+                        required 
+                        autocomplete="username"
+                        placeholder="Choose a username (min 3 characters)"
+                        minlength="3"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="regPassword" 
+                        name="regPassword" 
+                        required 
+                        autocomplete="new-password"
+                        placeholder="Choose a password (min 6 characters)"
+                        minlength="6"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email (optional)</label>
+                    <input 
+                        type="email" 
+                        id="regEmail" 
+                        name="regEmail" 
+                        autocomplete="email"
+                        placeholder="Enter your email"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="registerSubmitBtn">
+                    Create Account
+                </button>
+                <button type="button" class="btn btn-secondary btn-block" id="cancelRegisterBtn">
+                    Cancel
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>Secure access to your personalized news feed</p>
+                <p class="workitu-branding">Powered by <a href="https://www.workitu.com" target="_blank" rel="noopener noreferrer" class="workitu-link">Workitu Tech</a> - <a href="https://www.workitu.com" target="_blank" rel="noopener noreferrer" class="workitu-link">www.workitu.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

@@ -77,7 +77,7 @@ class EmailService {
         <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <header style="border-bottom: 3px solid #1a73e8; padding-bottom: 20px; margin-bottom: 30px;">
             <h1 style="margin: 0; color: #1a73e8; font-size: 28px;">Tech & Business News Update</h1>
-            <p style="margin: 10px 0 0 0; color: #666; font-size: 14px;">Your curated selection of the 30 most relevant tech and business news</p>
+            <p style="margin: 10px 0 0 0; color: #666; font-size: 14px;">Your curated selection of the 30 most trending tech and business news</p>
             <p style="margin: 5px 0 0 0; color: #999; font-size: 12px;">Updated: ${dateStr}</p>
           </header>
 
@@ -88,6 +88,10 @@ class EmailService {
           <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #999; font-size: 12px;">
             <p>This is an automated news digest. You are receiving this because you subscribed to tech and business news updates.</p>
             <p style="margin-top: 10px;">Total articles: ${articles.length}</p>
+            <p style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <strong>Powered by <a href="https://www.workitu.com" style="color: #1a73e8; text-decoration: none;">Workitu Tech</a></strong><br>
+              <a href="https://www.workitu.com" style="color: #1a73e8; text-decoration: none;">www.workitu.com</a>
+            </p>
           </footer>
         </div>
       </body>

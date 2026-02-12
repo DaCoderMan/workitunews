@@ -59,7 +59,7 @@ class NewsService {
    */
   async fetchFromRSSFeeds() {
     const allArticles = [];
-    const allFeeds = [...config.rssFeeds.tech, ...config.rssFeeds.business];
+    const allFeeds = config.rssFeeds.trending;
 
     // Fetch from all feeds in parallel
     const feedPromises = allFeeds.map(feedUrl => this.fetchFeed(feedUrl));
@@ -137,16 +137,23 @@ class NewsService {
         source: article.source?.name || 'Unknown'
       }));
 
-      const prompt = `You are a news curator for a tech business owner in Israel. Analyze the following news articles and return the top 30 most relevant and important articles about technology and business.
+      const prompt = `You are a news curator for a tech business owner in Israel. Analyze the following news articles and return the top 30 most relevant and TRENDING articles about technology and business.
 
-Focus on:
-- Major tech industry developments
-- Business and startup news
-- Technology innovations
-- Market trends
-- Relevant business strategies
+Focus on TRENDING and VIRAL content:
+- Stories gaining traction on social media (X/Twitter)
+- Viral tech and business news
+- Trending topics and discussions
+- Breaking news that's going viral
+- Major tech industry developments that are trending
+- Business news making waves online
 
-Return ONLY a JSON array of indices (0-based) of the top 30 articles, sorted by relevance and importance. Format: [0, 5, 12, ...]
+Prioritize articles that are:
+- Currently trending on social media
+- Gaining viral attention
+- Being widely discussed online
+- Breaking news stories
+
+Return ONLY a JSON array of indices (0-based) of the top 30 TRENDING articles, sorted by trending relevance and viral potential. Format: [0, 5, 12, ...]
 
 Articles:
 ${JSON.stringify(articleSummaries, null, 2)}
